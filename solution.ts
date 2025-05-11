@@ -109,11 +109,10 @@ function processValue(value: string | number): number{
         throw new Error('Negative number not allowed')
     }
      
-    return new Promise((resolve)=>{  setTimeout(()=>{ resolve(n*n) },100)})
+    return new Promise((resolve)=>{  setTimeout(()=>{ resolve(n*n) },1000)})
   };
 
-  squareAsync(4).then(console.log);        // Output after 1s: 16
-  squareAsync(-3).catch(console.error);    // Output: Error: Negative number not allowed
+
 
 
  
