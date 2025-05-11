@@ -1,16 +1,31 @@
-# Deference Between Type and Interface
+# Difference Between Type and Interface
 
-Type and interface both are used in TypeScript to declare shape of type. Type used for declare union ,intersection,tuple primitive and non-primitive(array,object,function) value while interface used for declare shape of object and class.
+`type` and `interface` are both used in TypeScript to define the shape of data. 
 
+- `type` can describe **primitives**, **unions**, **intersections**, **tuples**, **functions**, and **objects**.
+- `interface` is generally used to describe the shape of **objects** and **classes**, and supports declaration merging.
 
-<pre>```ts
+```ts
+// Using type
 type Person = {
   name: string;
   age: number;
 };
 
-type Status = "active" | "inactive"; // Union type
-type Employee = Person & { role: string }; // Intersection type
+// Union type
+
+type Status = "active" | "inactive"; 
+
+// Intersection type
+type Employee = Person & { role: string }; 
 
 
-```<pre>
+// Using interface
+interface Animal {
+  species: string;
+  sound(): void;
+}
+
+interface Dog extends Animal {
+  breed: string;
+}

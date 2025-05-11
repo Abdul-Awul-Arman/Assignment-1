@@ -111,7 +111,3 @@ function processValue(value: string | number): number{
      
     return new Promise((resolve)=>{  setTimeout(()=>{ resolve(n*n) },1000)})
   };
-
-
-
- 
