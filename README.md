@@ -3,7 +3,7 @@
 Type and interface both are used in TypeScript to declare shape of type. Type used for declare union ,intersection,tuple primitive and non-primitive(array,object,function) value while interface used for declare shape of object and class.
 
 
-<pre>```
+<pre>```ts
 type Person = {
   name: string;
   age: number;
