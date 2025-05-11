@@ -60,7 +60,60 @@ class Car extends Vehicle{
    }
 }
 
-const myCar = new Car("Toyota", 2020, "Corolla");
-myCar.getInfo();   // Output: "Make: Toyota, Year: 2020"
-myCar.getModel();  // Output: "Model: Corolla"
+function processValue(value: string | number): number{
+ 
+    if(typeof value==='string'){
+        return value.length
+    }
+    return value*2;
 
+}
+
+
+  interface Product {
+    name: string;
+    price: number;
+  }
+  
+  function getMostExpensiveProduct(products: Product[]): Product | null{
+
+    if(products.length===0) return null;
+
+    return products.reduce((max,current)=>current.price>max.price? current :max)
+
+  };
+
+
+  enum Day {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+  }
+  
+  function getDayType(day: Day): string{
+    if(day===Day.Friday || day=== Day.Saturday){
+        return "Weekend"
+    }
+    else{
+        return "Weekday"
+    }
+  };
+
+  async function squareAsync(n: number): Promise<number>{
+     
+    if(n<0){
+        throw new Error('Negative number not allowed')
+    }
+     
+    return new Promise((resolve)=>{  setTimeout(()=>{ resolve(n*n) },100)})
+  };
+
+  squareAsync(4).then(console.log);        // Output after 1s: 16
+  squareAsync(-3).catch(console.error);    // Output: Error: Negative number not allowed
+
+
+ 
