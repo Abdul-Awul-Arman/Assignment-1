@@ -3,7 +3,7 @@
 `type` and `interface` are both used in TypeScript to define the shape of data. 
 
 - `type` can describe **primitives**, **unions**, **intersections**, **tuples**, **functions**, and **objects**.
-- `interface` is generally used to describe the shape of **objects** and **classes**, and supports declaration merging.Declaration merging means if we declare interface multiple time with difference property `TypeScript` will merge them in one example given below with other example.
+- `interface` is generally used to describe the shape of **objects** and **classes**, and supports declaration merging.Declaration merging means if we declare interface multiple time with difference property `TypeScript` will merge them into one.For more clear understanding examples are given below.
 
 ### Syntax of type 
 ```ts
@@ -92,7 +92,7 @@ function printId(id: string | number) {
   console.log(`Your ID is: ${id}`);
 }
 
-//those tow are valid
+//both of these are valid 
 printId(101);       
 printId("A102");
 
@@ -112,14 +112,14 @@ type Employee = {
 
 type Staff = Person & Employee;
 
-const john: Staff = {
+const arman: Staff = {
   name: "arman",
   employeeId: 12345
 };
 
 // This will be invalid because it does not include 'employeeId'.
 // Intersection types require all properties from the combined types.
-const jane: Staff = {
-  name: "Jane"
+const arman: Staff = {
+  name: "arman"
   // ❌ Error: Property 'employeeId' is missing in type
 };
